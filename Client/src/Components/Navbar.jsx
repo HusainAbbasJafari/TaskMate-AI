@@ -28,7 +28,7 @@ const Navbar = () => {
         <div className="container-fluid">
           <Link className="navbar-brand fw-semibold" to={"/"}>
             <FcElectricity className="fs-2" />
-            Jira
+            TaskMate-AI
           </Link>
 
           <button
