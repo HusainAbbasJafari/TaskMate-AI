@@ -1,0 +1,102 @@
+  /* 1. Use a more-intuitive box-sizing model */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+  }
+
+
+
+  /* 6. Inherit fonts for form controls */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  /* 7. Avoid text overflows */
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
+
+
+
+  /* Target the entire scrollbar */
+  ::-webkit-scrollbar {
+    width: 3px;
+    /* Adjust width */
+  }
+
+  /* Track (background) */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Light gray background */
+    border-radius: 10px;
+  }
+
+  /* Handle (the draggable part) */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    /* Dark gray color */
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  .select-fit {
+    max-width: max-content !important;
+  }
+
+
+  .card-title {
+    background-color: #dda2ed;
+    color: #170518;
+    font-weight: 600;
+  }
+
+  .dropstart .dropdown-toggle::before {
+    display: none !important;
+  }
+
+  /* fix */
+  .form-select option:hover {
+    background-color: #424040 !important;
+    color: #0a050a;
+    font-weight: 600;
+  }

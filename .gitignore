@@ -1,0 +1,13 @@
+# Ignore node_modules in both client and server
+/Client/node_modules
+/Server/node_modules
+
+# Ignore .env files (important for keeping sensitive data out of Git)
+/Server/.env
+
+# Ignore build and logs
+/Client/build
+/Client/.env
+/Server/logs
+
+# Add any other files or folders you want to ignore
