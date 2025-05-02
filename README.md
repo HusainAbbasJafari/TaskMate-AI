@@ -1,4 +1,4 @@
-# JiraClone-React-RTK
+# TaskMate-AI
 
 A Jira-like task management application built using **React**, **Redux Toolkit**, **React Query**, and **Drag-and-Drop** functionality. The backend is powered by **Node.js**, **Express**, and **MongoDB**.
 
