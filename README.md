@@ -204,5 +204,5 @@ Contributions are welcome! Please fork the repository and submit a pull request.
 ## Contact
 
 For any inquiries, please contact:
-- **Name**: Haider Jafari
+- **Name**: Husain A. Jafari
 - **Email**: jafrihusain000@gmail.com
