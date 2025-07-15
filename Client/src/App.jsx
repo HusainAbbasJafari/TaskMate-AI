@@ -13,7 +13,7 @@ import { AuthProvider } from './contexts/AuthContext';
 const Signup = lazy(() => import('./Components/Signup'));
 const Login = lazy(() => import('./Components/Login'));
 const Home = lazy(() => import('./Pages/Home'));
-
+const Dashboard = lazy(() => import('./Pages/Dashboard'));
 const browserRouter = createBrowserRouter([
 
   
@@ -32,6 +32,18 @@ const browserRouter = createBrowserRouter([
             <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => {}}>
               <Suspense fallback={<div>Loading Home...</div>}>
                 <Home />
+              </Suspense>
+            </ErrorBoundary>
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "dashboard",
+        element: (
+          <ProtectedRoute>
+            <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => {}}>
+              <Suspense fallback={<div>Loading Dashboard...</div>}>
+                <Dashboard />
               </Suspense>
             </ErrorBoundary>
           </ProtectedRoute>

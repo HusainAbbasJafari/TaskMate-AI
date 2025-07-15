@@ -86,7 +86,7 @@ const ChatBot = () => {
     }
 
     // unComment to activate the wake word detection
-    listenForWakeWord();
+    // listenForWakeWord();
   };
 
   const handleOpenChat = () => {
@@ -124,85 +124,85 @@ const ChatBot = () => {
 
    // unComment to activate the wake word detection
 
-  const listenForWakeWord = () => {
-    // Prevent multiple calls for recognition if already listening
-    if (isListeningRef.current) return;
-    isListeningRef.current = true; // Set the flag to true when listening starts
+  // const listenForWakeWord = () => {
+  //   // Prevent multiple calls for recognition if already listening
+  //   if (isListeningRef.current) return;
+  //   isListeningRef.current = true; // Set the flag to true when listening starts
 
-    // Don't listen if chat is open
-    if (showChat) {
-      console.log('Chat is open, not listening for wake word.');
-      return;
-    }
+  //   // Don't listen if chat is open
+  //   if (showChat) {
+  //     console.log('Chat is open, not listening for wake word.');
+  //     return;
+  //   }
 
-    // Check for browser support and handle the correct SpeechRecognition constructor
-    const recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    if (!recognition) {
-      console.error("Speech Recognition is not supported in this browser.");
-      return;
-    }
+  //   // Check for browser support and handle the correct SpeechRecognition constructor
+  //   const recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  //   if (!recognition) {
+  //     console.error("Speech Recognition is not supported in this browser.");
+  //     return;
+  //   }
 
-    const speechRecognition = new recognition();
-    recognitionRef.current = speechRecognition; // Store the instance in the ref
-    speechRecognition.lang = 'en-US'; // Set language to English
-    speechRecognition.interimResults = false; // Only final results
+  //   const speechRecognition = new recognition();
+  //   recognitionRef.current = speechRecognition; // Store the instance in the ref
+  //   speechRecognition.lang = 'en-US'; // Set language to English
+  //   speechRecognition.interimResults = false; // Only final results
 
-    speechRecognition.onstart = () => {
-      console.log('Voice recognition started.');
-    };
+  //   speechRecognition.onstart = () => {
+  //     console.log('Voice recognition started.');
+  //   };
 
-    speechRecognition.onresult = (event) => {
-      const command = event.results[0][0].transcript.toLowerCase();
-      console.log('Voice Command:', command);
+  //   speechRecognition.onresult = (event) => {
+  //     const command = event.results[0][0].transcript.toLowerCase();
+  //     console.log('Voice Command:', command);
 
-      if (
-        command === "hey jayf" || 
-        command === "hey j" || 
-        command === "hey j a y f" || 
-        command === "hey jeff" || 
-        command === "hey jef"||
-        command === "hey hero"
-      ) {
-        console.log('Opening chat...');
-        handleOpenChat(); // Open chat when wake word is detected
-        speechRecognition.stop(); // Stop listening for wake word after opening chat
-      }
-    };
+  //     if (
+  //       command === "hey jayf" || 
+  //       command === "hey j" || 
+  //       command === "hey j a y f" || 
+  //       command === "hey jeff" || 
+  //       command === "hey jef"||
+  //       command === "hey hero"
+  //     ) {
+  //       console.log('Opening chat...');
+  //       handleOpenChat(); // Open chat when wake word is detected
+  //       speechRecognition.stop(); // Stop listening for wake word after opening chat
+  //     }
+  //   };
 
-    speechRecognition.onerror = (error) => {
-      console.log('Speech recognition error:', error);
-    };
+  //   speechRecognition.onerror = (error) => {
+  //     console.log('Speech recognition error:', error);
+  //   };
 
-    speechRecognition.onend = () => {
-      console.log('Voice recognition ended.');
-      isListeningRef.current = false; // Reset the flag when recognition ends
+  //   speechRecognition.onend = () => {
+  //     console.log('Voice recognition ended.');
+  //     isListeningRef.current = false; // Reset the flag when recognition ends
 
-      if (!showChat) {
-        listenForWakeWord(); // Restart the recognition after it ends if chat is still closed
-      } else {
-        console.log('Recognition stopped because the chat is open.');
-      }
-    };
+  //     if (!showChat) {
+  //       listenForWakeWord(); // Restart the recognition after it ends if chat is still closed
+  //     } else {
+  //       console.log('Recognition stopped because the chat is open.');
+  //     }
+  //   };
 
-    speechRecognition.start(); // Start listening for voice commands
-  };
+  //   speechRecognition.start(); // Start listening for voice commands
+  // };
 
   
    // unComment to activate the wake word detection
 
-  useEffect(() => {
-    if (!showChat) {
-      listenForWakeWord(); // Start listening for wake word when chat is closed
-    }
+  // useEffect(() => {
+  //   if (!showChat) {
+  //     listenForWakeWord(); // Start listening for wake word when chat is closed
+  //   }
 
-    // Cleanup on component unmount
-    return () => {
-      if (recognitionRef.current) {
-        recognitionRef.current.stop();
-        console.log('Voice recognition stopped on unmount.');
-      }
-    };
-  }, [showChat]); // Re-run the effect when `showChat` state changes
+  //   // Cleanup on component unmount
+  //   return () => {
+  //     if (recognitionRef.current) {
+  //       recognitionRef.current.stop();
+  //       console.log('Voice recognition stopped on unmount.');
+  //     }
+  //   };
+  // }, [showChat]); // Re-run the effect when `showChat` state changes
 
 
   const handleGreet = () => {
