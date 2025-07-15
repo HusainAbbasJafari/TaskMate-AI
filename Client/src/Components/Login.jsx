@@ -2,6 +2,8 @@ import React, { useState, useContext } from 'react';
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { loginFormSchema } from '../schemas';
+import { LuEyeClosed } from "react-icons/lu";
+import { LuEye } from "react-icons/lu";
 // import { login } from '../api';
 import {login } from '../api/auth';
 import { Link, useNavigate } from 'react-router-dom';
@@ -17,6 +19,7 @@ const Login = () => {
   const { login: loginUser } = useContext(AuthContext);
   const navigate = useNavigate();
   const [apiError, setApiError] = useState(''); // Add error state
+  const [showPassword , setShowPassword] = useState(false); // State to toggle password visibility
 
   const { values, errors, touched, handleChange, handleBlur, handleSubmit, setFieldValue } = useFormik({
     initialValues: initialValues,
@@ -44,7 +47,9 @@ const Login = () => {
             {errors.email && touched.email ? <div className="form-text text-danger">{errors.email}</div> : null}
           </div>
           <div className="form-floating mb-3">
-            <input type="password" name='password' className="form-control" id='password' value={values.password} onChange={handleChange} onBlur={handleBlur} placeholder="Please enter your email" />
+            
+            <input type={showPassword ? 'text' : 'password'} name='password' className="form-control" id='password' value={values.password} onChange={handleChange} onBlur={handleBlur} placeholder="Please enter your email" />
+            <LuEyeClosed  onClick={() => setShowPassword(!showPassword)} />
             <label className='text-secondary' htmlFor="password">Password</label>
             {errors.password && touched.password ? <div className="form-text text-danger">{errors.password}</div> : null}
           </div>

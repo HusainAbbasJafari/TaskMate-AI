@@ -166,6 +166,7 @@ input[type="search"]{
 .body-frame{
     transition: all 0.5s ease-in-out;
 }
+
 .body-frame-open{ 
     padding-left:20px;
 }
@@ -242,8 +243,8 @@ border:3px solid rgb(253, 253, 253);
 
 .glass{
     backdrop-filter: blur(10px)!important;
-    background-color: rgba(175, 194, 106, 0.181) !important;;
-    color:#fff !important;;
+    background-color: rgba(175, 194, 106, 0.181) !important;
+    color:#fff !important;
     font-family: Arial, Helvetica, sans-serif;
    box-shadow:0 8px 32px rgba(0,0,0,0.2)
    }
@@ -490,7 +491,7 @@ border:3px solid rgb(253, 253, 253);
   }
   @keyframes l4-2 {
     100% {top:-0.1px}
-  }
+  } 
 
   .chat-box-content ::-webkit-scrollbar {
     width: 3px !important;
@@ -509,6 +510,3 @@ border:3px solid rgb(253, 253, 253);
   .chat-box-header:hover{
     opacity:1;
   }
-
-
-

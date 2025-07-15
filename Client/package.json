@@ -14,6 +14,7 @@
     "@dnd-kit/core": "^6.3.1",
     "@dnd-kit/sortable": "^10.0.0",
     "@reduxjs/toolkit": "^2.5.1",
+    "@tailwindcss/vite": "^4.1.5",
     "@tanstack/react-query": "^5.68.0",
     "@tanstack/react-query-devtools": "^5.68.0",
     "axios": "^1.8.2",
@@ -30,7 +31,9 @@
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.1.5",
     "react-syntax-highlighter": "^15.6.1",
+    "recharts": "^2.15.3",
     "redux": "^5.0.1",
+    "tailwindcss": "^4.1.5",
     "yup": "^1.6.1"
   },
   "devDependencies": {

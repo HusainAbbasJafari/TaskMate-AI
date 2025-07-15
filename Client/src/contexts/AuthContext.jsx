@@ -41,7 +41,6 @@ const AuthProvider = ({ children }) => {
   const login = (token) => {
     localStorage.setItem('token', token);
     console.log(token,"token at login function")
-
     dispatch(getLoggedInUser(token)); // Fetch the logged-in user
     setIsAuthenticated(true);
   };
@@ -59,7 +58,7 @@ const AuthProvider = ({ children }) => {
     login,
     logout,
   }), [isAuthenticated, loading, login, logout]);
-
+  
   return (
     <AuthContext.Provider value={authValue}>
       {children}
