@@ -6,19 +6,20 @@ const Workspace = require('../Models/Workspace');
 require('dotenv').config();
 
 const loginController = async (req, res) => {
+  console.log("Login request received");
         const { email, password } = req.body;
       
         try {
           // Check if the user exists
           const user = await User.findOne({ email });
           if (!user) {
-            return res.status(403).json({ message: 'Invalid credentials',success:false });
+            return res.status(403).json({ message: 'User not found',success:false });
           }
       
           // Check if the password is correct
           const isMatch = await bcrypt.compare(password, user.password);
           if (!isMatch) {
-            return res.status(400).json({ message: 'Invalid credentials',success:false });
+            return res.status(400).json({ message: 'Incorrect password',success:false });
           }
       
           // Generate a JWT token
