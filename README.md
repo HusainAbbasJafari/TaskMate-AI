@@ -1,10 +1,85 @@
-# TaskMate-AI
+# 🚀 TaskMate-AI — AI-Powered Project Management (Jira-like)
 
-A Jira-like task management application built using **React**, **Redux Toolkit**, **React Query**, and **Drag-and-Drop** functionality. The backend is powered by **Node.js**, **Express**, and **MongoDB**.
+**TaskMate-AI** is a modern **MERN-stack project management platform** that blends Kanban workflows with **AI automation** — featuring smart task suggestions, voice-driven chat, and intelligent context-based task handling.  
+Built using **React**, **Redux Toolkit**, **TanStack Query**, **@dnd-kit**, **Node.js**, **Express**, and **MongoDB**, it offers a secure and scalable foundation for enterprise-grade productivity.
 
 ---
 
-## Features
+### TaskMate Dashboard
+![Home](./Client/public/TaskMateAI-view.png)
+
+
+## ✨ Quick Pitch
+A next-gen project management system that merges AI assistance with collaborative task management — offering authentication, protected layouts, advanced caching, and robust error handling for real-world use.
+
+---
+
+
+## 🔑 Key Features
+
+### 🧑‍💻 Authentication & Authorization
+- JWT-based login and session management  
+- Role-Based Access Control (Admin / Manager / Member / Guest)  
+- Project and workspace-level permission rules  
+
+### 🔐 Protected Layouts & Secure Routes
+- Route-level protection for authorized access  
+- Role-aware UI rendering (buttons/forms hidden for unprivileged users)  
+- View-only mode for external collaborators  
+
+### 🗂️ Task & Workflow Management
+- Kanban board powered by **@dnd-kit** (drag, drop, reorder with persistence)  
+- Task assignments, priority levels, and sub-task tracking  
+- Dynamic filtering, sorting, and search  
+
+### 🤖 AI Integrations
+- **Smart task suggestions** (powered by OpenAI / Cohere APIs)  
+- **Voice command assistant** for quick task updates or queries  
+- **AI auto-complete** for task descriptions and project summaries  
+
+### ⚡ Performance & Data Handling
+- **TanStack Query** for advanced caching, background refetching, and retries  
+- Optimistic UI updates with rollback on failure  
+- Lazy loading and pagination for heavy datasets  
+
+### 🧩 Error Handling & Edge Cases
+- Centralized error middleware on the backend  
+- Global React error boundary for front-end crashes  
+- Permission-denied and resource-not-found handlers  
+
+### 📊 Data Integrity & Logging
+- Task activity history and audit trail per user  
+- Soft-delete with recovery options  
+- Concurrency-safe updates  
+
+### 🧱 Architecture & DevOps
+- **MERN Stack**: React + Node.js + Express + MongoDB  
+- Modular folder structure for scalable backend  
+- Environment-based configuration (.env for dev/prod)  
+- CI/CD-ready setup (GitHub Actions compatible)  
+
+### 🔒 Security Highlights
+- Encrypted passwords and JWTs  
+- Input sanitization and rate limiting  
+- Strict access to protected API endpoints  
+
+---
+
+
+
+### AI Ghost Suggestion Hit Tab to complete
+![F1](./Client/public/TaskMateAI-SmartInputs.png)
+
+### S3
+![F2](./Client/public/TaskMateAI-chatbot.png)
+
+### S4
+![F3](./Client/public/TaskMateAI-TD.png)
+
+### S5
+![F3](./Client/public/TaskMateAI-chatbotFS.png)
+
+
 
 ### Client
 - **React** for building the user interface.
